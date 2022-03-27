@@ -53,7 +53,7 @@ resource "aws_launch_configuration" "workshop_launch_config" {
     image_id = "ami-0fb653ca2d3203ac1"
     instance_type = "t2.micro"
     security_groups = [aws_security_group.workshop_asg_sg.id]
-    key_name = aws_key_pair.ssh-key.key_name
+    key_name = "aditya"
     lifecycle {
       create_before_destroy = true
     }
