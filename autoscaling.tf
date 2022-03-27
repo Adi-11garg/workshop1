@@ -50,7 +50,7 @@ resource "aws_autoscaling_policy" "workshop-asg-policy" {
 
 resource "aws_launch_configuration" "workshop_launch_config" {
     name_prefix = "Workshop Launch Configuration"
-    image_id = "ami-0fb653ca2d3203ac1"
+    image_id = "ami-0851b76e8b1bce90b"
     instance_type = "t2.micro"
     security_groups = [aws_security_group.workshop_asg_sg.id]
     key_name = aws_key_pair.ssh-key.key_name
