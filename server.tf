@@ -34,10 +34,10 @@ resource "aws_security_group" "workshop-sg" {
     }
 }
 
-#Create instance host in US-EAST-2A Public subnet
+#Create instance host in AP-SOUTH-1A Public subnet
 
 resource "aws_instance" "workshop-1a" {
-    ami = "ami-0fb653ca2d3203ac1"
+    ami = "ami-0851b76e8b1bce90b"
     instance_type = "t2.micro"
     key_name = aws_key_pair.ssh-key.key_name 
     associate_public_ip_address = true 
@@ -50,10 +50,10 @@ resource "aws_instance" "workshop-1a" {
     user_data = file("${path.module}/script.sh")
 }
 
-#Create instance host in US-EAST-2B Public subnet
+#Create instance host in AP-SOUTH-1B Public subnet
 
 resource "aws_instance" "workshop-1b" {
-    ami = "ami-0fb653ca2d3203ac1"
+    ami = "ami-0851b76e8b1bce90b"
     instance_type = "t2.micro"
     key_name = aws_key_pair.ssh-key.key_name 
     associate_public_ip_address = true 
