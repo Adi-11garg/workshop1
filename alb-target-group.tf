@@ -9,7 +9,7 @@ resource "aws_lb_target_group" "workshop-front-end-tg" {
     }
     health_check {
         protocol = "HTTP"
-        path = "/healthy.html"
+        path = "/index.html"
         healthy_threshold = 3
         unhealthy_threshold = 2
         timeout = 8
