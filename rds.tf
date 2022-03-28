@@ -46,7 +46,7 @@ resource "aws_db_instance" "workshop-db" {
     engine_version = "5.7"
     multi_az = "true"
     instance_class = "db.t2.micro"
-    name = "mydb"
+    name = "mydb1"
     username = "admin"
     password = var.db-master-password 
     identifier = "workshop-database"

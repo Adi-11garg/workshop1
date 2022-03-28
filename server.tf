@@ -39,7 +39,7 @@ resource "aws_security_group" "workshop-sg" {
 resource "aws_instance" "workshop-1a" {
     ami = "ami-0851b76e8b1bce90b"
     instance_type = "t2.micro"
-    key_name = aws_key_pair.ssh-key.key_name 
+    key_name = aws_key_pair.ssh-key.key_name
     associate_public_ip_address = true 
     vpc_security_group_ids = [aws_security_group.workshop-sg.id]
     subnet_id = aws_subnet.workshop1-public-1a.id 
@@ -55,7 +55,7 @@ resource "aws_instance" "workshop-1a" {
 resource "aws_instance" "workshop-1b" {
     ami = "ami-0851b76e8b1bce90b"
     instance_type = "t2.micro"
-    key_name = aws_key_pair.ssh-key.key_name 
+    key_name = aws_key_pair.ssh-key.key_name
     associate_public_ip_address = true 
     vpc_security_group_ids = [aws_security_group.workshop-sg.id]
     subnet_id = aws_subnet.workshop1-public-1b.id 
