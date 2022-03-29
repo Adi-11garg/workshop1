@@ -40,7 +40,7 @@ The approach which i used to make application is mention below. There are few ar
 
 This repository contains terraform configuration file to launch high availability infrastructure on AWS. In this repository I try to show the syntax of terraform resources which i used- 
 
-# Configure the AWS Provider
+# AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
@@ -212,75 +212,56 @@ resource "aws_autoscaling_group" "example" {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Requirements
+
+   1.AWS account
+   2.EC2 instance with Terraform and Jenkins configured
+   3.An AMI configured with Nginx, MAven and tomcat
+   4.IAM service role attach with EC2 instance running Jenkins
+   
+        
+
+# Setup
+# AMI Setup
+
+    Launch EC2 instance with Amazon ubuntu AMI
+    Install Nginx, maven ,java required packages
+    Configure Nginx to deploy war file application
+    Create Amazon AMI from it in the region you want to use it
+
+# Jenkins Instance Setup
+
+    Launch EC2 instance with your choice of AMI
+    Install latest version of Java
+    Install and Configure Jenkins
+    Install and configure Terraform
+    Give appropiate permission to jenkins user
+    Create aws role and attach with ami to access aws services
+
+Paste that custom ami id in terraform instances and then push the code on Git by following commands:
+1.git init
+2.git add .
+3.git commit -m "msg"
+4.git status
+5.git remote add origin <repo link>
+6.git remote -v
+7.git push -u origin <branch name>  
+  
+# GitHub Setup
+
+    Clone the repository
+    Set webhook to trigger Jenkins job
+    Put the terraform configuration file and Jenkins file into repository
+
+# Jenkins job setup
+
+    Install required Jenkins plugins
+    Create pipeline job
+    Add GitHub repository url as SCM
+    Set GitHub Poll SCM
+    Push your changes or run the job the provision the infrastructure
+
+After making pipeline build the code and jenkins will make the infrasturcture on aws and with the help of load balancer dns we can see our desirable output on browser.
 
 
 
