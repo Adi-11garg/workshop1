@@ -238,14 +238,14 @@ resource "aws_autoscaling_group" "example" {
     Give appropiate permission to jenkins user
     Create aws role and attach with ami to access aws services
 
-Paste that custom ami id in terraform instances and then push the code on Git by following commands:
-1.git init
-2.git add .
-3.git commit -m "msg"
-4.git status
-5.git remote add origin <repo link>
-6.git remote -v
-7.git push -u origin <branch name>  
+# Paste that custom ami id in terraform instances and then push the code on Git by following commands:
+-git init
+-git add .
+-git commit -m "msg"
+-git status
+-git remote add origin <repo link>
+-git remote -v
+-git push -u origin <branch name>  
   
 # GitHub Setup
 
